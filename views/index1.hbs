@@ -1,0 +1,100 @@
+<div class="container">
+  {{!-- 類別選擇 --}}
+  <div class="row mx-auto">
+    <div class="dropdown d-grid">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+    
+  </div>
+
+  {{!-- 總金額顯示 --}}
+  <div class="row">
+    <div class="row col-md-8 mx-auto">
+      <div class="d-flex">
+        <div class="d-flex align-items-center">總金額: </div>
+        <div class="display-1 mx-auto">123</div>
+      </div>
+    </div>
+  </div>
+  {{!-- 支出清單 --}}
+  <div class="row">
+    <div class="row col-md-8 col-xl-6 mx-auto">
+      {{!-- item-1 --}}
+      <div class="col-md-8 mb-3">
+        <div class="card">
+          <div class="card-body d-flex">
+            <div class="d-flex align-items-center me-2"><i>house</i></div>
+            <div>
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            </div>
+            <div class="ms-auto d-flex align-items-center">
+              200
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-items-center mb-3">
+        <div class="d-flex me-2">
+          <a href="">
+            <button>修改</button>
+          </a>
+        </div>
+        <div class="d-flex">
+          <form action="">
+            <button>刪除</button>
+          </form>
+        </div>
+      </div>
+      
+      
+      {{!-- item-2 --}}
+      <div class="col-md-8 mb-3">
+        <div class="card">
+          <div class="card-body d-flex">
+            <div class="d-flex align-items-center me-2"><i>house</i></div>
+            <div>
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            </div>
+            <div class="ms-auto d-flex align-items-center">
+              200
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-items-center mb-3">
+        <div class="d-flex me-2">
+          <a href="">
+            <button>修改</button>
+          </a>
+        </div>
+        <div class="d-flex">
+          <form action="">
+            <button>刪除</button>
+          </form>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  {{!-- 新增 --}}
+  <div class="row mb-5">
+    <div class="row col-md-8 col-xl-6 mx-auto">
+      <div class="col-md-8 d-flex justify-content-center">
+        <a href="/records/new" class="d-block w-50">
+          <button class="btn btn-lg btn-light w-100">新增支出</button>
+        </a>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>
