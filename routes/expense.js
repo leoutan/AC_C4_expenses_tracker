@@ -10,10 +10,21 @@ const Category = db.Category
 // 首頁
 router.get('/', (req, res, next)=>{
   return Record.findAll({
+    include:{
+      model: Category,
+      as:'Category',
+      attributes:['icon']
+    },
     raw:true
   })
     .then((records)=>{
-      return res.render('index2', {records})
+      const addIconRecords = records.map((record)=>{
+        return {
+          ...record, //將物件展開
+          categoryIcon: record['Category.icon'] //將值放入合適的屬性
+        }
+      })
+      return res.render('index2', {records: addIconRecords})
     })
 })
 
@@ -67,6 +78,10 @@ router.post('/', (req, res, next)=>{
     .then(()=>{
       req.flash('success', '新增成功')
       return res.redirect('/expenses')
+    })
+    .catch((error)=>{
+      error.errorMessage = '新增失敗'
+      next(error)
     })
 })
 

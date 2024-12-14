@@ -15,6 +15,7 @@ const session = require('express-session')
 const flash = require('connect-flash')
 
 const messageHandler = require('./middlewares/message-handler')
+const errorHandler = require('./middlewares/error-handler')
 
 app.engine('.hbs', engine({extname:'.hbs'}))
 app.set('view engine', '.hbs')
@@ -38,7 +39,7 @@ app.use(flash())
 app.use(messageHandler)
 
 app.use(router)
-
+app.use(errorHandler)
 app.listen(port, ()=>{
   console.log(`expense-tracker Server on http://localhost:${port}`)
 })

@@ -1,3 +1,4 @@
+{{>message}}
 <div class="container">
   <div class="row">
     <div class="row col-md-8 col-xl-6 mx-auto">
@@ -69,6 +70,18 @@
       <div class="row col-md-8 col-xl-6 mx-auto">
         <div class="col-md-8 d-flex justify-content-center ms-auto">
           <button type="submit">新增支出</button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- 返回 --}}
+    <div class="row">
+      <div class="row col-md-8 col-xl-6 mx-auto">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <a href="/expenses">
+            <button type="button" class="btn btn-lg btn-light w-100">返回總覽</button>
+          </a>
         </div>
       </div>
     </div>
