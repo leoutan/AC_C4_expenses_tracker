@@ -62,11 +62,12 @@ router.get('/edit/:id', (req, res, next)=>{
 
 // 新增
 router.post('/', (req, res, next)=>{
-  // const body = req.body
-  // return Record.create(body)
-  //   .then(()=>{
-  //     return res.redirect('/expenses')
-  //   })
+  const body = req.body
+  return Record.create(body)
+    .then(()=>{
+      req.flash('success', '新增成功')
+      return res.redirect('/expenses')
+    })
 })
 
 // 編輯
