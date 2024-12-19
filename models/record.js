@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Record.belongsTo(models.User, {
         foreignKey:'userId',
-        as:'User'
+        // as:'User'
       })
       Record.belongsTo(models.Category, {
         foreignKey:'categoryId',
@@ -23,9 +23,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Record.init({
     name: {
-      type:DataTypes.STRING,
-      allowNull: false,
-      defaultValue: '1'
+      type:DataTypes.STRING(5),
+      allowNull: false
     },
     date: {
       type:DataTypes.STRING
