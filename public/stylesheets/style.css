@@ -1,4 +1,4 @@
-.fa-trash-can:hover {
+/* .fa-trash-can:hover {
   color: black;
 }
 
@@ -63,7 +63,7 @@ p {
 
 .input-group-text {
   width: 25%;
-}
+} */
 
 /* ------------------------------------------ */
 @media screen and (min-width: 768px) {
@@ -98,7 +98,8 @@ p {
 }
 
 .login-option-separator-content,
-.register-option-separator-content {
+.register-option-separator-content,
+.test {
   width: 2rem;
   text-align: center;
   background-color: white;

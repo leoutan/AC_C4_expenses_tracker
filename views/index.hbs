@@ -5,15 +5,32 @@
     <div class="row col-md-8 col-xl-6 mx-auto">
       <div class="col-md-8">
         <div class="d-grid dropdown">
-          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropMenu1">
             類別選擇
           </button>
-          <ul class="dropdown-menu w-100">
+          <ul class="dropdown-menu w-100" aria-labelledby="dropMenu1">
+            {{#each categories as |category|}}
             <li>
-              <a href="" class="drop-item active">123</a>
+              <a href="/expenses?category={{category.name}}" class="dropdown-item {{#if category.isSelected}}active{{/if}}">{{category.name}}</a>
             </li>
+            {{/each}}
           </ul>
         </div> 
+      </div>
+      
+      <div class="col-md-4">
+        <form id="sortForm" action="/expenses?category={{category.name}}" method="get">
+          <select name="sort" id="sort" class="form-select" onchange="document.getElementById('sortForm').submit()">
+            <option selected disabled> 排序方式</option>
+            <option value="none">不排序</option>
+            <option value="ASC">按名稱(A->Z)</option>
+            <option value="DESC">按名稱(Z->A)</option>
+            <option value="amount_ASC">按價格(低->高)</option>
+            <option value="amount_DESC">按價格(高->低)</option>
+            <option value="date_ASC">按日期(舊->新)</option>
+            <option value="date_DESC">按日期(新->舊)</option>
+          </select>
+        </form>
       </div>
     </div>
   </div>
@@ -25,7 +42,7 @@
             總金額:
           </div>
           <div class="mx-auto">
-            <span class="display-1">123</span>
+            <span class="display-1">{{totalAmount}}</span>
           </div>
         </div>
       </div>
@@ -96,13 +113,23 @@
       </div> --}}
     </div>
   </div>
-  <div class="row">
-    <div class="row col-md-8 col-xl-6 mx-auto">
-      <div class="col-md-8 d-flex justify-content-center">
-        <a href="/expenses/new">
-          <button>新增支出</button>
-        </a>
-      </div>
+  <div class="row mb-3">
+    <div class="col-md-8 col-xl-6 mx-auto d-flex justify-content-center">
+      <a href="/expenses/new">
+        <button>新增支出</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-8 col-xl-6 mx-auto d-flex justify-content-center">
+      <a href="/expenses?category={{categoryName}}&page={{prevPage}}&sort={{sort}}">
+        <button>prev</button>
+      </a>
+      <span>{{currentPage}} / {{totalPage}}</span>
+      <a href="/expenses?category={{categoryName}}&page={{nextPage}}&sort={{sort}}">
+        <button>next</button>
+      </a>
     </div>
   </div>
 </div>

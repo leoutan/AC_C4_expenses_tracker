@@ -11,6 +11,7 @@ const handlebars = require('handlebars')
 if(process.env.NODE_ENV === 'development') {
   require('dotenv').config()
 }
+const passport = require('./config/passport')
 const session = require('express-session')
 const flash = require('connect-flash')
 
@@ -36,6 +37,9 @@ app.use(session({
   saveUninitialized: false
 }))
 app.use(flash())
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.use(messageHandler)
 
 app.use(router)

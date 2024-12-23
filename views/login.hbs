@@ -1,41 +1,56 @@
 {{>message}}
 <div class="d-flex">
   <div style="width: 50vw;height: 100vh; background-image:url('/image/login.svg');background-position:center;background-size:contain;background-repeat:no-repeat;"></div>
-  <div class="row" style="width: 50vw;">
+  <div style="width: 50vw;">
     <div class="col-md-8 col-xl-6 mx-auto d-flex flex-column align-items-center">
+      <h1>LOGIN</h1>
       <div>
-        <h1>LOGIN</h1>
-        <div>
-          <form action="/login" method="post">
-        
-            <div class="">
-              <label for="email" class="form-label m-0">email</label>
-              <input type="text" class="form-control" id="email" name="email">
-            </div>
-        
+        <form action="/login" method="post">
+      
+          <div class="">
+            <label for="email" class="form-label m-0">email</label>
+            <input type="text" class="form-control" id="email" name="email">
+          </div>
+      
+          <div>
             <div>
-              <div>
-                <label class="form-label" for="password">password</label>
-              </div>
-              <div>
-                <input class="form-control" type="text" id="password" name="password" placeholder="輸入密碼">
-              </div>
+              <label class="form-label" for="password">password</label>
             </div>
-        
-            <div class="d-grid mt-2">
-              <button type="submit" class="btn btn-light">LOGIN</button>
+            <div>
+              <input class="form-control" type="text" id="password" name="password" placeholder="輸入密碼">
             </div>
-          </form>
-        </div>
-        
-        <div>
-          <span>沒有帳號 ?</span>
-          <a href="/register" class="d-grid text-decoration-none">
-            <button type="submit" class="btn btn-light">註冊帳號</button>
-          </a>
-        </div>
+          </div>
+      
+          <div class="d-grid mt-2">
+            <button type="submit" class="btn btn-light">LOGIN</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="d-grid">
+        <span>沒有帳號 ?</span>
+      </div>
+      <div>
+        <a href="/register" class="d-grid text-decoration-none">
+          <button type="submit" class="btn btn-light">註冊帳號</button>
+        </a>
+      </div>
+      
+      <div class="w-100 position-relative">
+        <hr style="width: 100%;">
+        <span class="position-absolute top-50 start-50 translate-middle" style="text-align: center;height: 2rem;line-height: 2rem; background-color:white">or</span>
+      </div>
+
+      <div class="d-grid">
+        <a href="/oauth2/login/facebook">
+          <button>
+            Facebook快速登入
+          </button>
+        </a>
       </div>
       
     </div>
+    
   </div>
+  
 </div>
