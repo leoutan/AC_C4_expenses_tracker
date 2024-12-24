@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "schema":"npx sequelize db:migrate",
+    "seed":"npx sequelize db:seed:all",
+    "dev": "set NODE_ENV=development&& nodemon app.js"
   },
   "keywords": [],
   "author": "leo",
